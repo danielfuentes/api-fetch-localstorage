@@ -35,9 +35,33 @@ window.addEventListener('load', function(){
                 //console.log(populares.results[i].poster_path);
                 let articulo = document.createElement('article')
                 articulo.classList.add('articulo')
-                articulo.innerHTML += `<a href='detallePelicula.html?id=${populares.results[i].id}&titulo=${populares.results[i].title}'>  <img src='https://image.tmdb.org/t/p/w500${populares.results[i].poster_path}' alt = '${populares.results[i].title}' /> </a>`
+                articulo.innerHTML += `<a href='detallePelicula.html?id=${populares.results[i].id}&titulo=${populares.results[i].title}'>  <img src='https://image.tmdb.org/t/p/w500${populares.results[i].poster_path}' alt = '${populares.results[i].title}' /> </a> 
+                <div> 
+                    <a  id= '${JSON.stringify(populares.results[i])}' href= '#' class='btn btn-success btn-block botonMiLsta' >Agregar a mi lista </a>
+                </div>
+                `
                 peliculas.append(articulo)
             }
+            //Agregar a mi Lista
+            let botonMiLista = document.querySelectorAll('.botonMiLsta')
+            let arrayMiListaDeFavoritas;
+            //console.log(botonMiLista)
+            botonMiLista.forEach(pelicula => {
+                pelicula.addEventListener('click', function(e){
+                    e.preventDefault()
+                    let miListadePeliculas = localStorage.getItem('miLista')
+                    if(miListadePeliculas == null){
+                        arrayMiListaDeFavoritas = [];
+                    }else{
+                        arrayMiListaDeFavoritas = JSON.parse(miListadePeliculas)
+                    }
+                    arrayMiListaDeFavoritas.push(JSON.parse(this.id))
+                    localStorage.setItem('miLista', JSON.stringify(arrayMiListaDeFavoritas))
+
+                } )
+
+            });
+
             
     })
     .catch(function(error){
