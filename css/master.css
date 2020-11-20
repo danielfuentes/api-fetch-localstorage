@@ -20,21 +20,29 @@ video{
 }
 .navegacion{
     display: flex;
-    width: 40%;
+    width: 60%;
     justify-content: space-around;
     align-items: center;
     font-size: 1.2rem;   /*16 px  * 1.2 */
+    
 }
-.navegacion a{
-    font-size: 1.5rem;
-    color: white;
-    opacity: 1;
-}
+
 .navegacion a:hover{
     color: red;
     text-decoration: underline;
     opacity: 0.6;
 
+}
+.opciones{
+    display: flex;
+    list-style-type: none;
+
+}
+.opciones li a{
+    font-size: 1.5rem;
+    color: white;
+    opacity: 1;
+    padding: 10px;
 }
 
 /*----- CSS SECCIÓN 1 -----*/

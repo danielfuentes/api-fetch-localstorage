@@ -14,10 +14,22 @@
                 <img src="img/logo_cedavilu1.png" alt="Logo Ángel Daniel Fuentes - Cedavilu">
             </nav>
             <nav class="navegacion">
-                    <a href="index.html">Inicio</a>
-                    <a href="#">Películas</a>
-                    <a href="#">Series</a>
-                    <a href="miLista.html">Mi lista</a>
+                    <ul class="opciones">
+
+                        <li><a href="index.html">Inicio</a></li>
+                        <li><a href="#">Películas</a></li>
+                        <li><a href="#">Series</a></li>
+                        <li><a href="miLista.html">Mi lista</a></li>
+                    </ul>
+                    
+                    <div>
+                        <form action="resultados.html" method="GET">
+                            <div class="input-group">
+                                <input type="text" class="form-control" placeholder="Buscar" name="filtro">
+                                <button type="submit"><ion-icon name="search-outline"></ion-icon></button>
+                            </div>
+                        </form>
+                    </div>
            </nav>
         </header>
         <section class="bg-dark">
@@ -31,6 +43,8 @@
             
         </section>
     </main>
+    <!--Aquí estoy incoporando la lubreria de ionicons-->
+    <script src="https://unpkg.com/ionicons@5.2.3/dist/ionicons.js"></script>
     <script src="js/master.js"></script>
 </body>
 </html>
